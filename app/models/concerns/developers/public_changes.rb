@@ -29,10 +29,10 @@ module Developers
     ]
 
     def touch_profile_updated_at
-      self.profile_updated_at = Time.current if pulic_changes?
+      self.profile_updated_at = Time.current if public_changes?
     end
 
-    def pulic_changes?
+    def public_changes?
       (PUBLIC_ATTRIBUTES & changes.keys).any? ||
         role_type.changed? ||
         role_level.changed? ||
